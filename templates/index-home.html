@@ -1,0 +1,74 @@
+{% extends 'index.html'%}
+{% block title %}
+<title>Tarragon Automation | Automate your Gates and CCTVS</title>
+  <meta property="og:url" content="https://www.automate.tarragonhub.co.ke" />
+    <meta property="og:title" content="Tarragon Automation | Automate your Gates and CCTVS" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Tarragon Automation is a kenyan based company,whose
+     high profile in gates and CCTV installation has been spread far and wide. We install all types of gates ranging from garage 
+     gates, sliding gates, swinging gates and CCTV. Feel the security that comes with our gates and cctvs. " />
+    <meta property="og:image" content="" />
+    <meta name="keywords" content="gates,automatic gates,electric gates,automated gates, gates in kenya , automatic gates in kenya
+    remote control gates,install gate system, leading gates installers in kenya, best automatic gates, cctv camera installation,
+    flood lights installation." />
+    <meta name="description" content="Tarragon Automation is a kenyan based company,whose
+     high profile in gates and CCTV installation has been spread far and wide. We install all types of gates ranging from garage 
+     gates, sliding gates, swinging gates and CCTV. Feel the security that comes with our gates and cctvs. " />
+    <link rel="canonical" href="https://www.automate.tarragonhub.co.ke">
+    <meta property="og:site_name" content="Tarragon Automation" />
+
+    <!--For twitter-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@danni_njaz">
+    <meta name="twitter:title" content="Tarragon Automation | Automate your Gates and CCTVS">
+    <meta name="twitter:description" content="Tarragon Automation is a kenyan based company,whose
+     high profile in gates and CCTV installation has been spread far and wide. We install all types of gates ranging from garage 
+     gates, sliding gates, swinging gates and CCTV. Feel the security that comes with our gates and cctvs. ">
+    <meta name="twitter:creator" content="@danni_njaz">
+    <meta name="twitter:image" content="">
+{% endblock title %}
+
+
+
+{% block clients %}
+{% endblock clients %}
+
+{% block content %}
+
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+
+<!--<div class="w3-quarter" style="text-align: center;">-->
+  <div class="w3-row" style="text-align: center;">
+
+<div class="w3-container w3-padding-32 w3-theme-d1 w3-center" style="height: 20px">
+<h1>Tarragon Automation Hub Store</h1>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="w3-row-padding">
+  {% if gates %}
+  {% for gate in gates %} 
+    <div class="w3-third w3-container w3-margin-bottom">
+      <a target="_blank" href="{{gate.image.url}}">
+      <img src="{{gate.image.url}}" alt="{{gate.title}}" height="200" class="w3-hover-opacity w3-animate-zoom" style="width:100%;">
+    </a>
+      <div class="w3-container w3-white" style="text-align:center">
+        <h4 style="text-align:center">{{gate.title}}</h4>
+        <!--<p> {{gate.description|safe|linebreaks|truncatewords:10}}</p>-->
+        <button class="w3-button w3-small w3-theme w3-hover-teal w3-animate-zoom" title="Go To {{gate.title}}"><a href="{% url 'item_detail' slug=gate.slug types=gate.types %}">More Info</a></button>
+
+       </div> 
+
+    </div>
+    {% endfor%}
+  {% else %}
+  <h3> There are no items in this category Please check back later</h3>
+  {% endif %}
+</div>  
+
+
+{% endblock content %}

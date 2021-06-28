@@ -1,0 +1,83 @@
+{% extends 'index.html'%}
+{% load static%}
+{% block title %}
+  <title>Contacts | +254-734-604-700 | Tarragon Automation </title>
+    <meta property="og:url" content="https://www.automate.tarragonhub.co.ke/contact-us/" />
+    <meta property="og:title" content="Contacts | +254-734-604-700 | Tarragon Automation" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Tarragon Automation contacts: safaricom :  +254-727-691-321 ; airtel :  +254-734-604-700.
+     email us at  tarragon.ke@gmail.com. we are available wherever needed by our clients" />
+    <meta name="keywords" content="call tarragon Automation, CCTV installers contacts, Gates installation contacts, cheap CCTV cameras" />
+    <meta name="description" content="Tarragon Automation contacts: safaricom :  +254-727-691-321 ; airtel :  +254-734-604-700.
+     email us at  tarragon.ke@gmail.com. we are available wherever needed by our clients" />
+    <link rel="canonical" href="https://www.automate.tarragonhub.co.ke/contact-us/">
+    <meta property="og:site_name" content="Tarragon Automation" />
+
+    <!--For twitter-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@danni_njaz">
+    <meta name="twitter:title" content="Contacts | +254-734-604-700 | Tarragon Automation">
+    <meta name="twitter:description" content="Tarragon Automation contacts: safaricom :  +254-727-691-321 ; airtel :  +254-734-604-700.
+     email us at  tarragon.ke@gmail.com. we are available wherever needed by our clients">
+    <meta name="twitter:creator" content="@danni_njaz">
+    <meta name="twitter:image" content="">
+
+{% endblock title %}
+
+{% block header %}
+{% endblock header %}
+
+{% block clients %}
+{% endblock clients %}
+
+{% block content %}
+
+<!-- Contact Container -->
+
+<div class="w3-container w3-padding-64 w3-theme-l5" id="contacts" style="background-image: url({%static 'images/gate4.jpg'%});">
+  <div class="w3-row">
+    <div class="w3-col m5 w3-card-4 w3-padding-16 w3-white" style="padding: 10px;">
+    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
+      <h3>Address</h3>
+      <p>Get in touch with us</p>
+      
+
+      <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i> Beba Beba Trade Center Nairobi, Kenya</p>
+      <p><i class="fa fa-phone w3-text-teal w3-xlarge" ></i> <a href="tel:+254-727-691-321">+254-727-691-321</a></p>
+      <p><i class="fa fa-phone w3-text-teal w3-xlarge" ></i><a href="tel:+254-727-691-321">+254-734-604-700</a> </p>
+      <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  <a href="mailto:tarragon.ke@gmail.com">tarragon.ke@gmail.com</a></p>
+    </div>
+    <div class="w3-col m7 " >
+      <form class="w3-container w3-card-4 w3-padding-16 w3-white" method="post" action="{% url "send_email" %}" >
+      	{% csrf_token %}
+      <div class="w3-section">      
+        <label>Name</label>
+        <input class="w3-input" type="text" name="name" required>
+      </div>
+      <div class="w3-section">      
+        <label>Email</label>
+        <input class="w3-input" type="text" name="email" required>
+      </div>
+      <div class="w3-section">      
+        <label>Subject</label>
+        <input class="w3-input" type="text" name="subject" required>
+      </div>
+      <div class="w3-section">      
+        <label>Message</label>
+        <!--<input class="w3-input" type="text" name="Message" required>-->
+        <textarea class="w3-input" name="message"></textarea>
+      </div>  
+      <!--<input class="w3-check" type="checkbox" checked name="Like">
+      <label>I Like it!</label>-->
+      <button type="submit" class="w3-button w3-right w3-theme">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.818267266033!2d36.82166001425474!3d-1.2828670990643143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d5e9a9fc1d%3A0xebc251b9ca35d5c!2sBeba%20Beba%20Trade%20center!5e0!3m2!1sen!2ske!4v1605862885767!5m2!1sen!2ske" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  </div>
+</div>
+
+{% endblock content %}

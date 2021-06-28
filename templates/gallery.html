@@ -1,0 +1,64 @@
+{% extends 'index.html'%}
+
+{% block title %}
+    <title>Tarragon Automation Gallery</title>
+    <meta property="og:url" content="https://www.automate.tarragonhub.co.ke/tarragon-gallery/" />
+    <meta property="og:title" content="Gallery | Tarragon Automation" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="canonical" href="https://www.automate.tarragonhub.co.ke/tarragon-gallery/">
+    <meta property="og:site_name" content="Tarragon Automation" />
+
+    <!--For twitter-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@danni_njaz">
+    <meta name="twitter:title" content="Gallery | Tarragon Automation">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="@danni_njaz">
+    <meta name="twitter:image" content="">
+{% endblock title %}
+
+{% block header %}
+{% endblock header %}
+
+{% block clients%}
+{% endblock clients %}
+
+{% block content %}
+
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+
+<!--<div class="w3-quarter" style="text-align: center;">-->
+  <div class="w3-row" style="text-align: center;">
+
+<div class="w3-container w3-padding-32 w3-theme-d1 w3-center" style="height: 20px">
+<h2>Tarragon Gallery</h2>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="w3-row-padding" style="margin-left: 10%;margin-right: 10%;">
+  {% for item in allitems %} 
+    <div class="w3-third w3-container w3-margin-bottom">
+      <a target="_blank" href="{{item.image.url}}">
+      <img src="{{item.image.url}}" alt="Image" height="200" class="w3-hover-opacity w3-animate-zoom" style="width:100%;">
+    </a>
+      <div class="w3-container w3-white">
+       
+       </div> 
+
+    </div>
+    {% endfor %}
+</div>  
+
+
+
+
+  
+{%endblock content%}

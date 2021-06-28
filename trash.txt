@@ -1,0 +1,43 @@
+<marquee behavior="scroll" direction="left">
+<img src="/pix/samples/bats_013.gif" width="125" height="82" alt="Flying Bat">
+</marquee>
+
+
+
+#today = date.today()
+
+
+slidegates = items.objects.filter(types='sliding gates')
+    swinggates = items.objects.filter(types='swinging gates')
+    garagegates = items.objects.filter(types='garage gates')
+    context={
+    'slidegates':slidegates,
+    'swinggates':swinggates,
+    'garagegates':garagegates,
+    }
+
+
+
+  slidegates = items.objects.get('sliding gates')
+    swinggates = items.objects.get('swinging gates')
+    garagegates = items.objects.get('garage gates')
+    context={
+    'slidegates':slidegates,
+    'swinggates':swinggates,
+    'garagegates':garagegates,
+    }
+
+
+
+
+    
+ {% for items in allitems%}
+  <div class="gallery">
+    
+    <a target="_blank" href="{{items.image.url}}">
+      <img src="{{items.image.url}}" alt="Image" width="600" height="400">
+    </a>
+     
+  </div>
+
+{% endfor%}

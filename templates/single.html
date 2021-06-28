@@ -1,0 +1,67 @@
+{% extends 'index.html'%}
+{% block title %}
+<title>{{item.types}} | {{item.title}} | Tarragon Automation</title>
+<meta property="og:url" content="https://www.automation.tarragonhub.co.ke/{{item.types}}/{{item.slug}}" />
+<meta property="og:title" content="{{item.types}} | {{item.title}} | Tarragon Automation" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="{{item.image.url}}" />
+<meta name="keywords" content="{{item.title}}" />
+<meta name="description" content="{{item.description}}" />
+<link rel="canonical" href="https://www.automate.tarragonhub.co.ke/{{item.types}}/{{item.slug}}">
+<meta property="og:site_name" content="Tarragon Automation" />
+
+<!--For twitter-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="https://www.automation.tarragonhub.co.ke/{{item.types}}/{{item.slug}}">
+<meta name="twitter:title" content="{{item.category}} | {{item.name}} | Tarragon Automation">
+<meta name="twitter:description" content="{{item.description}}">
+<meta name="twitter:creator" content="@danni_njaz">
+<meta name="twitter:image" content="{{item.image.url}}">
+{% endblock title %}
+
+{% block header %}
+{% endblock header %}
+
+
+
+
+{% block content %}
+
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work"  >
+
+<!--<div class="w3-quarter" style="text-align: center;">-->
+  <div class="w3-row" style="text-align: center;">
+
+<div class="w3-container w3-padding-32 w3-theme-d1 w3-center" style="height: 20px">
+<h2>{{item.title}}</h2>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="w3-row-padding" >
+  
+    <div class="w3-third w3-container w3-margin-bottom" style="margin-left:30%">
+      <a target="_blank" href="{{item.image.url}}">
+      <img src="{{item.image.url}}" alt="{{item.title}}" height="200" class="w3-hover-opacity w3-animate-zoom" style="width:100%;">
+    </a>
+      <div class="w3-container w3-white" style="text-align:center">
+        <h3>{{item.title}}</h3>
+        <!--pop up button-->
+        <p>{{item.description|safe|linebreaks}}</p>
+        <button class="w3-button w3-small w3-theme w3-hover-teal w3-animate-zoom" title=""><a href="https://wa.me/254727691321?text={{message}}" target="_blank">Request for Quotation</a></button>
+        <!--End of pop up button-->
+        
+
+       </div> 
+
+    </div>
+    
+</div>  
+
+{% endblock content %}
+
+{% block clients %}
+{% endblock clients %}

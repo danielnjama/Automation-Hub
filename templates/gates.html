@@ -1,0 +1,77 @@
+{% extends 'index.html'%}
+{% block title %}
+<title>{{title}} | Tarragon Automation | Home of Automation</title>
+{% for item in gates %}
+    <meta property="og:url" content="https://www.automation.tarragonhub.co.ke/{{item.types}}/" />
+    <meta property="og:title" content="{{item.types}} | {{item.title}} | Tarragon Automation" />
+    <meta property="og:image" content="https://www.automation.tarragonhub.co.ke{{item.image.url}}" />
+    <meta name="keywords" content="{{item.title}}" />
+    <meta name="description" content="{{item.description}}," />
+    <link rel="canonical" href="https://www.automation.tarragonhub.co.ke/{{item.types}}">
+    <!--For twitter-->
+    <meta name="twitter:site" content="https://www.automation.tarragonhub.co.ke/{{item.types}}/">
+    <meta name="twitter:title" content="{{item.types}} | {{item.title}} | Tarragon Automation">
+    <meta name="twitter:description" content="{{item.description}}">
+    
+    <meta name="twitter:image" content="https://www.automation.tarragonhub.co.ke{{item.image.url}}">
+{% endfor %}
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Tarragon Automation" />
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@danni_njaz">
+
+{% endblock title %}
+
+{% block header%}
+{% endblock header %}
+
+{% block clients %}
+{% endblock clients %}
+
+{% block content %}
+
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+
+<!--<div class="w3-quarter" style="text-align: center;">-->
+  <div class="w3-row" style="text-align: center;">
+
+<div class="w3-container w3-padding-32 w3-theme-d1 w3-center" style="height: 20px">
+<h2>{{types}}</h2>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="w3-row-padding">
+  {% if gates %}
+  {% for gate in gates %} 
+    <div class="w3-third w3-container w3-margin-bottom">
+      <a target="_blank" href="{{gate.image.url}}">
+      <img src="{{gate.image.url}}" alt="{{gate.title}}" height="200" class="w3-hover-opacity w3-animate-zoom" style="width:100%;">
+    </a>
+      <div class="w3-container w3-white" style="text-align:center">
+        <h4>{{gate.title}}</h4>
+        <!--pop up button-->
+        <button class="w3-button w3-small w3-theme w3-hover-teal w3-animate-zoom" title="Go To {{gate.title}}"><a href="{% url 'item_detail' slug=gate.slug types=gate.types %}">More Info</a></button>
+        <!--End of pop up button-->
+        
+
+       </div> 
+
+    </div>
+    
+
+
+
+    <!--End of pop up-->
+    {% endfor%}
+  {% else %}
+  <h3> There are no items in this category Please check back later</h3>
+  {% endif %}
+</div>  
+
+
+
+{% endblock content %}

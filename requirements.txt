@@ -1,0 +1,7 @@
+asgiref==3.2.3
+Django==3.0.3
+django-humanize==0.1.2
+humanize==1.0.0
+Pillow==7.0.0
+pytz==2019.3
+sqlparse==0.3.0
